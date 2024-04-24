@@ -45,47 +45,47 @@
         
         // ------------Using Ajax-----------
 
-        // numberInput.addEventListener('input', getFactAjax);
+        numberInput.addEventListener('input', getFactAjax);
 
-        // function getFactAjax() {
-        //     let number = numberInput.value;
+        function getFactAjax() {
+            let number = numberInput.value;
 
-        //     let xhr = new XMLHttpRequest();
-        //     xhr.open('GET', 'http://numbersapi.com/' + number);
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://numbersapi.com/' + number);
 
-        //     xhr.onload = function () {
-        //         if (this.status == 200 && number != '') {
-        //             fact.style.display = 'block';
-        //             factText.innerHTML = this.responseText;
-        //         } else if ( number == '') {
-        //             fact.style.display = 'none';
-        //         }
-        //     }
+            xhr.onload = function () {
+                if (this.status == 200 && number != '') {
+                    fact.style.display = 'block';
+                    factText.innerHTML = this.responseText;
+                } else if ( number == '') {
+                    fact.style.display = 'none';
+                }
+            }
 
-        //     xhr.send();
-        // }
+            xhr.send();
+        }
 
 
         //-------------Using Fetch API---------------
 
-        numberInput.addEventListener('input', getFactFetch);
+        // numberInput.addEventListener('input', getFactFetch);
 
-        function getFactFetch() {
-            let number = numberInput.value;
+        // function getFactFetch() {
+        //     let number = numberInput.value;
 
-            fetch('http://numbersapi.com/' + number)
-                .then((response) => response.text())
-                .then((data) => {
-                    if (number != '') {
-                        fact.style.display = 'block'
-                        factText.innerText = data;
-                    } else if(number == ''){
-                        fact.style.display = 'none';
-                    }
+        //     fetch('http://numbersapi.com/' + number)
+        //         .then((response) => response.text())
+        //         .then((data) => {
+        //             if (number != '') {
+        //                 fact.style.display = 'block'
+        //                 factText.innerText = data;
+        //             } else if(number == ''){
+        //                 fact.style.display = 'none';
+        //             }
 
-                })
-                .catch(error => console.log(error));
-        }
+        //         })
+        //         .catch(error => console.log(error));
+        // }
 
     </script>
 
